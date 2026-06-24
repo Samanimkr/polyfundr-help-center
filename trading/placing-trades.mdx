@@ -1,78 +1,71 @@
 ---
-title: "How to Place a YES or NO Trade"
+title: "How to Trade on PolyFundr"
 sidebarTitle: "Placing trades"
-description: "Step-by-step guide to placing a simulated YES or NO trade on PolyFundr, including how entry price and shares are calculated from your amount."
+description: "Place and close simulated YES or NO trades on real Polymarket markets: how prices work, how to enter and exit a position, and how outcomes resolve."
 ---
 
-Trades on PolyFundr are simulated. There is no on-chain execution. When you submit a trade, the platform records your position using the current Polymarket price as your entry price. Your shares and potential PnL are calculated from that snapshot. You need an active challenge or funded account to place a trade.
+Trading on PolyFundr means placing simulated YES or NO trades on real Polymarket markets. When you submit, your position is recorded at the current Polymarket price, and your shares and PnL are calculated from that snapshot.
+
+## Understanding prices
+
+Prices are shown in cents and represent the market's implied probability:
+
+- **50¢** means a 50% chance the outcome resolves YES; **90¢** means 90%.
+- A YES token at 30¢ and its NO token at 70¢ always sum to about 100¢.
+
+<Note>Prices refresh automatically but can lag a move by a few seconds. If one looks stale, reload the event page.</Note>
 
 ## Before you trade
 
-<Info>You must have an active challenge or funded account to submit trades. If you don't have one yet, visit `/accounts` to purchase a challenge. You can also try the free demo account to get familiar with the trade panel before committing.</Info>
+<Info>You need an active challenge or funded account to submit trades. If you don't have one, visit `/accounts` to buy a challenge, or try the free demo account to get familiar with the trade panel first.</Info>
 
 ## Placing a trade
 
 <Steps>
   <Step title="Open an event">
-    From the dashboard, click any event card to open its event page at `/event/[slug]`.
+    From **Markets** (`/markets`), click any event card to open its event page at `/event/[slug]`.
   </Step>
   <Step title="Select an outcome">
-    The outcomes table lists all tradable markets for the event. Click a row to select it, or click the **Yes** or **No** button directly. This selects the outcome and pre-fills the direction in the trade panel.
+    The outcomes table lists every tradable market for the event. Click a row, or the **Yes** / **No** button, to select it and pre-fill the direction.
   </Step>
   <Step title="Choose YES or NO">
-    In the trade panel, choose your direction:
-    - **YES:** you believe the outcome will resolve YES. Your entry price is the current YES token price.
-    - **NO:** you believe the outcome will resolve NO. Your entry price is the current NO token price.
+    - **YES:** you expect the outcome to resolve YES. Your entry price is the current YES token price.
+    - **NO:** you expect it to resolve NO. Your entry price is the current NO token price.
   </Step>
   <Step title="Enter an amount">
-    Type a USDC amount in the **Amount (\$)** field, or use the quick-add buttons (+\$1, +\$20, +\$100) to build up your size. The **MAX** button fills in the maximum risk amount allowed by your challenge rules.
+    Type a USDC amount in the **Amount (\$)** field, or use the quick-add buttons. The **MAX** button uses the largest amount your challenge rules allow.
 
     As you type, the panel shows:
-    - **Avg. price:** the entry price in cents.
-    - **To win:** the potential gain if the trade closes at 100¢.
+    - **Avg. price:** your entry price in cents.
+    - **Est. fee:** the fee for this market (often **Free**). See [Fees & execution](/trading/fees).
+    - **To win:** your potential gain if the trade resolves at 100¢, after fees.
   </Step>
-  <Step title="Submit the trade">
-    Click **Trade · \$amount**. The position is recorded immediately at the latest snapshot price.
+  <Step title="Submit">
+    Click **Trade · \$amount**. The position is recorded immediately at the latest price.
   </Step>
 </Steps>
 
-## How shares and entry price are calculated
+## How shares are calculated
 
-When your trade is recorded, the platform computes the following:
+Your shares are your amount divided by the entry price (as a decimal). At 40¢ with \$20 you get 50 shares; if it resolves to 100¢, those shares are worth \$50, a \$30 gain.
 
-| Field | Calculation |
-|---|---|
-| **Entry price** | Current YES token price (for YES trades) or current NO token price (for NO trades), expressed in cents |
-| **Shares** | Amount (USDC) ÷ entry price (as a decimal, e.g. 50¢ = 0.50) |
-
-For example: if you trade YES at 40¢ with \$20, your entry price is 0.40 and you receive 50 shares. If YES resolves to 100¢, those shares are worth \$50, which is a \$30 gain on your \$20.
-
-<Note>Each fill is stored as its own position. PolyFundr does not net or aggregate fills on the same outcome. Submitting two separate YES trades creates two separate positions.</Note>
+<Note>On markets that charge a fee, the fee comes out of your amount first, so you receive slightly fewer shares. Each fill is stored as its own position, with no netting. See [Fees & execution](/trading/fees).</Note>
 
 ## Wide spread warning
 
-If the spread between YES and NO prices on a market is wider than 3¢, the trade panel shows a warning. A wide spread means you may see an immediate paper loss on your position until the market tightens. This is normal behavior on lower-liquidity markets and is not an error.
-
-<Warning>Always check the spread before trading. A wide spread on a thin market can make it harder to close at a profit, even if the market moves in your favor.</Warning>
+If the gap between the YES and NO prices is wider than 3¢, the panel warns you. A wide spread can show an immediate paper loss until the market tightens, common on lower-liquidity markets. It is not an error, but check the spread before trading.
 
 ## Closing a position
 
-To close an open position before the market resolves:
-
 <Steps>
   <Step title="Find your position">
-    On the event page, open the **Positions** panel. Your open positions are listed with their current price and live PnL.
+    On the event page or the **Portfolio** page (`/portfolio`), open the **Positions** panel to see your open positions with their current price and PnL.
   </Step>
-  <Step title="Sell the position">
-    Click **Sell** next to the position you want to close. A confirmation dialog asks you to confirm the sale.
-  </Step>
-  <Step title="Confirm">
-    Click **Sell at market**. The position closes at the latest available price and is marked as closed in your portfolio.
+  <Step title="Close it">
+    Click **Close**, then **Sell at market** in the confirmation. The position closes at the latest price. Closing before resolution may include a fee; holding a winner to resolution is free. See [Fees & execution](/trading/fees).
   </Step>
 </Steps>
 
-You can also close positions from the **Portfolio** page at `/portfolio`, which shows all your open and closed positions across every event.
+## Resolved and unavailable outcomes
 
-## What requires an active challenge
-
-The trade button is only active when you have an active challenge or funded account. If your account is not active, the button shows **Buy challenge to start trading** and directs you to `/accounts`.
+Resolved outcomes appear in a collapsed **Resolved outcomes** section at the bottom of the outcomes table and can't be traded. An outcome under review shows an **In review** badge, and trading is disabled until the review completes.

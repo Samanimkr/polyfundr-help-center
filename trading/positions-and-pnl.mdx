@@ -4,7 +4,7 @@ sidebarTitle: "Positions & PnL"
 description: "How PolyFundr tracks your open and closed positions, calculates live PnL from fresh price snapshots, and aggregates your portfolio across all events."
 ---
 
-Every trade you place creates a position. PolyFundr stores each fill separately. There is no netting, so you may hold multiple positions on the same outcome at different entry prices. Each position carries a live PnL figure that updates continuously as fresh Polymarket price snapshots arrive.
+Every trade creates a position, and each fill is stored separately (no netting), so you may hold several positions on the same outcome at different entry prices. Each position has a live PnL that updates as fresh Polymarket prices arrive.
 
 ## Where to view positions
 
@@ -33,7 +33,9 @@ For each open position, PnL updates every time the platform fetches a fresh pric
 
 For example: you bought YES at 40¢ with \$20, giving you 50 shares. If the YES price is now 60¢, your current value is \$30 and your PnL is +\$10.
 
-<Note>PnL is unrealized (open) while the position is open. It becomes realized (closed) once you sell the position or the market resolves and auto-closes your position.</Note>
+<Note>On markets that charge a fee, a buy gives you slightly fewer shares (the fee is taken from your amount) and closing before resolution deducts a fee from your proceeds. Your current value and PnL are always shown **after fees**, and the fee you paid appears on the position. See [Fees & execution](/trading/fees).</Note>
+
+<Note>PnL is unrealized (open) while the position is open. It becomes realized (closed) once you close the position or the market resolves and auto-closes your position.</Note>
 
 ## Portfolio summary
 
@@ -62,7 +64,7 @@ The position table on the portfolio page shows:
 | **Amount** | USDC invested |
 | **Entry** | Price at which the trade was filled, in cents |
 | **Price** | Current market price (or close price for closed positions), in cents |
-| **Action** | **Sell** button for open positions; **Closed** badge for resolved ones |
+| **Action** | **Close** button for open positions; **Closed** badge for resolved ones |
 
 ## Positions are per trading account
 
@@ -72,4 +74,4 @@ Each trading account, whether a challenge or a funded account, tracks its own po
 
 ## Auto-close on event resolution
 
-When a Polymarket event resolves, open positions on that event are closed automatically. The close price is the resolution price of the outcome. Resolved positions appear in the position table with a **Closed** badge and their final PnL locked in.
+When a Polymarket event resolves, open positions on that event are closed automatically. The close price is the resolution price of the outcome. Resolved positions appear in the position table with a **Closed** badge and their final PnL locked in. A resolution close is **free**, holding a winning position to resolution pays out in full with no fee.

@@ -1,0 +1,67 @@
+---
+title: "Fees, Slippage & Order Rules"
+sidebarTitle: "Fees & execution"
+description: "How trading fees, slippage, and order minimums work on PolyFundr. Fees mirror Polymarket, so your simulated results match real trading."
+---
+
+PolyFundr mirrors how trading works on Polymarket, including fees, slippage, and order rules. That keeps your results close to real trading, which is what makes a funded track record meaningful.
+
+## Trading fees
+
+<Info>Fees mirror Polymarket's trading fees and are shown on the trade panel before you confirm. The exact fee for the market you are on appears on the **Est. fee** line.</Info>
+
+PolyFundr charges the same trading fee Polymarket would charge for that market. The fee depends on two things: the market's category, and the price you trade at.
+
+- The fee is **largest at 50/50 odds** and gets smaller as the price moves toward the edges (1¢ or 99¢).
+- Fees apply when you place a normal buy or sell (you are taking liquidity).
+
+### How much
+
+This table shows the most you would pay on a market (at 50/50 odds), as a percentage of your trade:
+
+| Market type | Fee at 50/50 odds |
+|---|---|
+| Crypto | up to 3.5% |
+| Economics, Culture, Weather | up to 2.5% |
+| Finance, Politics, Tech | up to 2.0% |
+| Sports | up to 1.5% |
+| Geopolitical and world events | Free |
+
+<Note>Many markets are **free**. Geopolitical and world-event markets never charge a fee, and any market that Polymarket has not enabled fees on is free too. Whenever a market is free, the trade panel shows **Est. fee: Free**.</Note>
+
+### How the fee is applied
+
+- **When you buy:** the fee comes out of the amount you enter, so you receive slightly fewer shares than a fee-free amount would buy. A fresh position can show a small paper loss equal to the fee. This is exactly how it works on Polymarket.
+- **When you sell:** the fee is taken out of your proceeds.
+- **At resolution: free.** If you hold a winning position until the market resolves, you are paid out with no fee. Only closing early (selling before the market resolves) is charged.
+
+### Where you see fees
+
+- **Before you trade:** the **Est. fee** line and its tooltip on the trade panel.
+- **After you trade:** the fee you paid is shown on your positions, and your profit and loss is always shown **after fees**.
+
+## Slippage on large orders
+
+For larger orders, the price you get is the **average** price across the order book, not just the best quote. On a deep market the difference is tiny. On a thin market, a big order can fill at a noticeably worse average price.
+
+<Warning>If your order would fill more than about **3% worse** than the best available price, the panel asks you to **confirm** before it goes through. You can accept and trade at that average price, or cancel and try a smaller size.</Warning>
+
+If a market does not have enough depth to fill your order at all, the order is **rejected**. Try a smaller size or wait for more liquidity. PolyFundr never fills you against a stale or estimated price.
+
+## Order minimums and increments
+
+To match Polymarket's order rules:
+
+- **Minimum order size:** orders below the market minimum (about \$1) are rejected rather than quietly rounded up.
+- **Price increments:** prices snap to the increments the market allows. Any small rounding is shown to you before you confirm.
+
+These rules make sure every trade you place on PolyFundr is one you could actually place on Polymarket.
+
+<CardGroup cols={2}>
+  <Card title="Placing trades" icon="circle-plus" href="/trading/placing-trades">
+    Step by step: how to place a YES or NO trade.
+  </Card>
+  <Card title="Positions & PnL" icon="chart-line" href="/trading/positions-and-pnl">
+    Track your open positions and profit and loss.
+  </Card>
+</CardGroup>
