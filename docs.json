@@ -55,6 +55,17 @@
         ]
       },
       {
+        "group": "Trading",
+        "icon": "trending-up",
+        "expanded": true,
+        "pages": [
+          "trading/placing-trades",
+          "trading/markets",
+          "trading/fees",
+          "trading/positions-and-pnl"
+        ]
+      },
+      {
         "group": "FAQ",
         "icon": "circle-question-mark",
         "expanded": true,

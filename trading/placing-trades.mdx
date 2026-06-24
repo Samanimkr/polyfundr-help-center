@@ -29,7 +29,8 @@ Trades on PolyFundr are simulated. There is no on-chain execution. When you subm
 
     As you type, the panel shows:
     - **Avg. price:** the entry price in cents.
-    - **To win:** the potential gain if the trade closes at 100¢.
+    - **Est. fee:** the trading fee for this market (often **Free**). See [Fees & execution](/trading/fees).
+    - **To win:** the potential gain if the trade closes at 100¢, after fees.
   </Step>
   <Step title="Submit the trade">
     Click **Trade · \$amount**. The position is recorded immediately at the latest snapshot price.
@@ -46,6 +47,8 @@ When your trade is recorded, the platform computes the following:
 | **Shares** | Amount (USDC) ÷ entry price (as a decimal, e.g. 50¢ = 0.50) |
 
 For example: if you trade YES at 40¢ with \$20, your entry price is 0.40 and you receive 50 shares. If YES resolves to 100¢, those shares are worth \$50, which is a \$30 gain on your \$20.
+
+<Note>On markets that charge a fee, the fee comes out of your amount first, so you receive slightly fewer shares than the fee-free example above. See [Fees & execution](/trading/fees) for the full breakdown.</Note>
 
 <Note>Each fill is stored as its own position. PolyFundr does not net or aggregate fills on the same outcome. Submitting two separate YES trades creates two separate positions.</Note>
 
@@ -67,7 +70,7 @@ To close an open position before the market resolves:
     Click **Sell** next to the position you want to close. A confirmation dialog asks you to confirm the sale.
   </Step>
   <Step title="Confirm">
-    Click **Sell at market**. The position closes at the latest available price and is marked as closed in your portfolio.
+    Click **Sell at market**. The position closes at the latest available price and is marked as closed in your portfolio. Closing before a market resolves may include a small fee; holding a winning position to resolution is free. See [Fees & execution](/trading/fees).
   </Step>
 </Steps>
 
