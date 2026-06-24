@@ -4,7 +4,7 @@ sidebarTitle: "Fees & execution"
 description: "How trading fees, slippage, and order minimums work on PolyFundr. Fees mirror Polymarket, so your simulated results match real trading."
 ---
 
-PolyFundr mirrors how trading actually works on Polymarket, including its fees, slippage, and order rules. This keeps your results honest: what you make or lose here is close to what you would make trading the same markets for real, which is what makes a funded track record meaningful.
+PolyFundr mirrors how trading works on Polymarket, including fees, slippage, and order rules. That keeps your results close to real trading, which is what makes a funded track record meaningful.
 
 ## Trading fees
 
@@ -31,7 +31,7 @@ This table shows the most you would pay on a market (at 50/50 odds), as a percen
 
 ### How the fee is applied
 
-- **When you buy:** the fee comes out of the amount you enter. If you spend $10, you receive slightly fewer shares than a fee-free $10 would buy, so a fresh position can show a small paper loss equal to the fee. This is exactly how it works on Polymarket.
+- **When you buy:** the fee comes out of the amount you enter, so you receive slightly fewer shares than a fee-free amount would buy. A fresh position can show a small paper loss equal to the fee. This is exactly how it works on Polymarket.
 - **When you sell:** the fee is taken out of your proceeds.
 - **At resolution: free.** If you hold a winning position until the market resolves, you are paid out with no fee. Only closing early (selling before the market resolves) is charged.
 
@@ -52,14 +52,10 @@ If a market does not have enough depth to fill your order at all, the order is *
 
 To match Polymarket's order rules:
 
-- **Minimum order size:** orders below the market minimum (around $1) are rejected rather than quietly rounded up.
+- **Minimum order size:** orders below the market minimum (about \$1) are rejected rather than quietly rounded up.
 - **Price increments:** prices snap to the increments the market allows. Any small rounding is shown to you before you confirm.
 
 These rules make sure every trade you place on PolyFundr is one you could actually place on Polymarket.
-
-## Why this matters
-
-PolyFundr is the first prop firm for Polymarket. The closer your simulated trading is to the real thing, including the costs, the more your track record here is worth when you trade a funded account. Charging the same fees and modeling the same slippage a real trader faces keeps the challenge fair and your edge real.
 
 <CardGroup cols={2}>
   <Card title="Placing trades" icon="circle-plus" href="/trading/placing-trades">
