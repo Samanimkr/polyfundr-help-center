@@ -17,7 +17,7 @@ PolyFundr charges the same trading fee Polymarket would charge for that market. 
 
 ### How much
 
-This table shows the most you would pay on a market (at 50/50 odds), as a percentage of your trade:
+At 50/50 odds, where the dollar fee is highest, the fee as a share of your trade is:
 
 | Market type | Fee at 50/50 odds |
 |---|---|
@@ -28,6 +28,134 @@ This table shows the most you would pay on a market (at 50/50 odds), as a percen
 | Geopolitical and world events | Free |
 
 <Note>Many markets are **free**. Geopolitical and world-event markets never charge a fee, and any market that Polymarket has not enabled fees on is free too. Whenever a market is free, the trade panel shows **Est. fee: Free**.</Note>
+
+### Fee at every price (per 100 shares)
+
+The dollar fee follows Polymarket's exact formula: it peaks at 50¢ and shrinks symmetrically toward the edges, so a trade at 30¢ costs the same as one at 70¢. Below is the taker fee in USDC for **100 shares** at each price.
+
+{/*
+  Fee-curve chart. Paste your published Datawrapper embed below (replace CHARTID),
+  then delete these comment markers:
+
+  <Frame>
+    <div className="p-3 bg-white rounded-xl">
+      <iframe
+        title="Taker fee (USDC) by share price for 100 shares"
+        src="https://datawrapper.dwcdn.net/CHARTID/"
+        scrolling="no"
+        frameBorder="0"
+        width="700"
+        height="450"
+        style={{ width: "0", minWidth: "100% !important", border: "none" }}
+      />
+    </div>
+  </Frame>
+*/}
+
+<Tabs>
+  <Tab title="Crypto">
+    | Price | Trade value | Taker fee (USDC) |
+    | ----- | ----------- | ---------------- |
+    | \$0.01 | \$1 | \$0.07 |
+    | \$0.05 | \$5 | \$0.33 |
+    | \$0.10 | \$10 | \$0.63 |
+    | \$0.15 | \$15 | \$0.89 |
+    | \$0.20 | \$20 | \$1.12 |
+    | \$0.25 | \$25 | \$1.31 |
+    | \$0.30 | \$30 | \$1.47 |
+    | \$0.35 | \$35 | \$1.59 |
+    | \$0.40 | \$40 | \$1.68 |
+    | \$0.45 | \$45 | \$1.73 |
+    | \$0.50 | \$50 | \$1.75 |
+    | \$0.55 | \$55 | \$1.73 |
+    | \$0.60 | \$60 | \$1.68 |
+    | \$0.65 | \$65 | \$1.59 |
+    | \$0.70 | \$70 | \$1.47 |
+    | \$0.75 | \$75 | \$1.31 |
+    | \$0.80 | \$80 | \$1.12 |
+    | \$0.85 | \$85 | \$0.89 |
+    | \$0.90 | \$90 | \$0.63 |
+    | \$0.95 | \$95 | \$0.33 |
+    | \$0.99 | \$99 | \$0.07 |
+  </Tab>
+  <Tab title="Economics / Culture / Weather / Other">
+    | Price | Trade value | Taker fee (USDC) |
+    | ----- | ----------- | ---------------- |
+    | \$0.01 | \$1 | \$0.05 |
+    | \$0.05 | \$5 | \$0.24 |
+    | \$0.10 | \$10 | \$0.45 |
+    | \$0.15 | \$15 | \$0.64 |
+    | \$0.20 | \$20 | \$0.80 |
+    | \$0.25 | \$25 | \$0.94 |
+    | \$0.30 | \$30 | \$1.05 |
+    | \$0.35 | \$35 | \$1.14 |
+    | \$0.40 | \$40 | \$1.20 |
+    | \$0.45 | \$45 | \$1.24 |
+    | \$0.50 | \$50 | \$1.25 |
+    | \$0.55 | \$55 | \$1.24 |
+    | \$0.60 | \$60 | \$1.20 |
+    | \$0.65 | \$65 | \$1.14 |
+    | \$0.70 | \$70 | \$1.05 |
+    | \$0.75 | \$75 | \$0.94 |
+    | \$0.80 | \$80 | \$0.80 |
+    | \$0.85 | \$85 | \$0.64 |
+    | \$0.90 | \$90 | \$0.45 |
+    | \$0.95 | \$95 | \$0.24 |
+    | \$0.99 | \$99 | \$0.05 |
+  </Tab>
+  <Tab title="Finance / Politics / Mentions / Tech">
+    | Price | Trade value | Taker fee (USDC) |
+    | ----- | ----------- | ---------------- |
+    | \$0.01 | \$1 | \$0.04 |
+    | \$0.05 | \$5 | \$0.19 |
+    | \$0.10 | \$10 | \$0.36 |
+    | \$0.15 | \$15 | \$0.51 |
+    | \$0.20 | \$20 | \$0.64 |
+    | \$0.25 | \$25 | \$0.75 |
+    | \$0.30 | \$30 | \$0.84 |
+    | \$0.35 | \$35 | \$0.91 |
+    | \$0.40 | \$40 | \$0.96 |
+    | \$0.45 | \$45 | \$0.99 |
+    | \$0.50 | \$50 | \$1.00 |
+    | \$0.55 | \$55 | \$0.99 |
+    | \$0.60 | \$60 | \$0.96 |
+    | \$0.65 | \$65 | \$0.91 |
+    | \$0.70 | \$70 | \$0.84 |
+    | \$0.75 | \$75 | \$0.75 |
+    | \$0.80 | \$80 | \$0.64 |
+    | \$0.85 | \$85 | \$0.51 |
+    | \$0.90 | \$90 | \$0.36 |
+    | \$0.95 | \$95 | \$0.19 |
+    | \$0.99 | \$99 | \$0.04 |
+  </Tab>
+  <Tab title="Sports">
+    | Price | Trade value | Taker fee (USDC) |
+    | ----- | ----------- | ---------------- |
+    | \$0.01 | \$1 | \$0.03 |
+    | \$0.05 | \$5 | \$0.14 |
+    | \$0.10 | \$10 | \$0.27 |
+    | \$0.15 | \$15 | \$0.38 |
+    | \$0.20 | \$20 | \$0.48 |
+    | \$0.25 | \$25 | \$0.56 |
+    | \$0.30 | \$30 | \$0.63 |
+    | \$0.35 | \$35 | \$0.68 |
+    | \$0.40 | \$40 | \$0.72 |
+    | \$0.45 | \$45 | \$0.74 |
+    | \$0.50 | \$50 | \$0.75 |
+    | \$0.55 | \$55 | \$0.74 |
+    | \$0.60 | \$60 | \$0.72 |
+    | \$0.65 | \$65 | \$0.68 |
+    | \$0.70 | \$70 | \$0.63 |
+    | \$0.75 | \$75 | \$0.56 |
+    | \$0.80 | \$80 | \$0.48 |
+    | \$0.85 | \$85 | \$0.38 |
+    | \$0.90 | \$90 | \$0.27 |
+    | \$0.95 | \$95 | \$0.14 |
+    | \$0.99 | \$99 | \$0.03 |
+  </Tab>
+</Tabs>
+
+<Note>**Geopolitical and world-event markets are free** at every price, so they are not shown above. Any other market Polymarket has not enabled fees on is free too.</Note>
 
 ### How the fee is applied
 
