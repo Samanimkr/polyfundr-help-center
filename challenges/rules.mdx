@@ -11,7 +11,7 @@ Use this page as the source of truth for challenge rules. It covers how you pass
 <CardGroup cols={2}>
   <Card title="You pass when" icon="badge-check">
     Equity reaches +30% and your profit is consistent (no single trading day
-    is more than 30% of your winning days' combined profit).
+    is more than your consistency cap of your winning days' combined profit).
   </Card>
   <Card title="You fail when" icon="shield-alert">
     You breach daily drawdown, total drawdown, max risk per trade, or
@@ -27,9 +27,9 @@ Use this page as the source of truth for challenge rules. It covers how you pass
 | What counts toward the target | Equity                                               | Realized profit                              |
 | Target size                   | 30% of starting balance                              | 30% of starting balance                      |
 | Open positions                | Count in equity                                      | Do not count until closed                    |
-| Consistency                   | No single day over 30% of winning days' profit               | 40% per payout window, every payout          |
+| Consistency                   | Your account's cap of winning days' profit           | Same cap, per payout window, every payout    |
 | Core risk rules               | 10% daily, 20% total, 5% max risk, 14-day inactivity | Same risk rules                              |
-| Payouts                       | Not available                                        | 90% split, progressive payout caps           |
+| Payouts                       | Not available                                        | Your account's profit split, progressive caps |
 
 ## You pass when
 
@@ -38,17 +38,24 @@ You pass the challenge the moment both of these are true at the same time.
 | Condition         | Requirement                                                                              |
 | :---------------- | :--------------------------------------------------------------------------------------- |
 | **Profit target** | Your account equity reaches **+30%** above your starting balance                         |
-| **Consistency**   | No single trading day's realized profit is more than **30%** of the combined profit of your winning days |
+| **Consistency**   | No single trading day's realized profit is more than your account's cap of the combined profit of your winning days |
 
 Realized profit is grouped by UTC calendar day. The consistency rule means your
-biggest single day cannot dominate your result, so in practice you need profit
-spread across **at least four profitable trading days**.
+biggest single day cannot dominate your result.
+
+Your cap depends on what you bought at checkout:
+
+| Consistency cap | Applies to | Profitable days you need |
+| :-- | :-- | :-- |
+| **30%** | Standard accounts | At least four |
+| **50%** | Accounts with the [consistency upgrade](/challenges/upgrades) | At least two |
+| **40%** | Funded accounts sold before the cap became a per-account setting, on payout windows only | At least three |
 
 <Note>
   Consistency is a gate, not a breach. It never fails or closes your account.
   It only delays the pass until your profit is spread out. If one big day is
-  more than 30% of your winning days' combined profit, keep trading across more days to bring that
-  share down, then the challenge passes once the +30% target is also met.
+  over your cap, keep trading across more days to bring that share down, then
+  the challenge passes once the +30% target is also met.
 </Note>
 
 ## Your account fails when
@@ -114,10 +121,13 @@ After you pass, your funded account keeps these risk rules:
 
 Funded payout eligibility is explained on [Funded payouts](/funded/payouts).
 
-A consistency rule also applies to **every funded payout window** (no single
-trading day over 40% of the winning days' combined profit in that window). It uses the same
-"no single lucky day" idea as the challenge, with more room. A trader who earns
+A consistency rule also applies to **every funded payout window**, using the
+same cap your challenge ran under. It is the same "no single lucky day" idea,
+measured over the profit earned since your last payout. A trader who earns
 steadily across a few days clears it without having to think about it.
+
+Your **profit split** also carries over from the challenge: 80% as standard, or
+90% if you bought the upgrade. See [Challenge upgrades](/challenges/upgrades).
 
 ## What is allowed
 
