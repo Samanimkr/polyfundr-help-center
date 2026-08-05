@@ -31,7 +31,8 @@
         "expanded": true,
         "pages": [
           "getting-started/introduction",
-          "getting-started/how-it-works"
+          "getting-started/how-it-works",
+          "getting-started/demo-account"
         ]
       },
       {
@@ -41,6 +42,7 @@
         "pages": [
           "challenges/overview",
           "challenges/rules",
+          "challenges/upgrades",
           "challenges/buying-a-challenge"
         ]
       },
@@ -62,6 +64,16 @@
           "trading/placing-trades",
           "trading/fees",
           "trading/positions-and-pnl"
+        ]
+      },
+      {
+        "group": "Your Account",
+        "icon": "user",
+        "expanded": true,
+        "pages": [
+          "account/signup-and-login",
+          "account/wallet",
+          "account/notifications"
         ]
       },
       {
@@ -88,7 +100,7 @@
     "primary": {
       "type": "button",
       "label": "Get Funded",
-      "href": "https://polyfundr.com/accounts"
+      "href": "https://polyfundr.com/checkout"
     }
   },
   "footer": {

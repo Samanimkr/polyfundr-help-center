@@ -1,7 +1,7 @@
 ---
 title: "How PolyFundr Works: Challenge to Payout"
 sidebarTitle: "How it works"
-description: "A step-by-step breakdown of the PolyFundr flow: buy a challenge, pass it, get a funded account, and withdraw 90% of your profits in USDC."
+description: "A step-by-step breakdown of the PolyFundr flow: buy a challenge, pass it, get a funded account, and withdraw your profits in USDC."
 ---
 
 Use this page as the main overview of PolyFundr. It shows how the challenge works, what changes when you get funded, and how payouts work.
@@ -41,7 +41,7 @@ This is the most important distinction on the site:
 | What counts toward the target | **Equity**              | **Realized profit**              |
 | Target size                   | 30% of starting balance | 30% of starting balance          |
 | Open positions                | Count in equity         | Do not count until closed        |
-| Consistency                   | No single day > 30% of winning days' profit | 40% per payout window, every payout |
+| Consistency                   | Your account's cap of winning days' profit | Same cap, per payout window, every payout |
 
 <Note>
   If you remember one thing, remember this: challenge passing is equity-based,
@@ -53,7 +53,7 @@ This is the most important distinction on the site:
 | Rule                 | Requirement                                  |
 | :------------------- | :------------------------------------------- |
 | Profit target        | +30% equity from starting balance            |
-| Consistency          | No single trading day over 30% of the winning days' combined profit |
+| Consistency          | No single trading day over your account's cap (30%, or 50% upgraded) of the winning days' combined profit |
 | Max daily drawdown   | 10% of the day's starting equity             |
 | Max total drawdown   | 20% below your peak equity                   |
 | Max risk per trade   | 5% of starting balance                       |
@@ -65,7 +65,7 @@ The full definitions and examples live on [Challenge rules](/challenges/rules).
 
 - The funded account starts at the same size as the challenge you passed.
 - Daily drawdown, total drawdown, max risk per trade, and inactivity rules still apply.
-- Payouts use a 90% split.
+- Payouts use an 80% split, or 90% if you bought the [upgrade](/challenges/upgrades).
 - Payouts are sent in USDC on Polygon.
 - You must enter the destination wallet address every time.
 - Payout requests use progressive caps: \$1,000 on the 1st request, \$2,000 on
