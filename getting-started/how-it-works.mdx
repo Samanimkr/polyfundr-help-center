@@ -8,7 +8,13 @@ Use this page as the main overview of PolyFundr. It shows how the challenge work
 
 ## Flow diagram
 
-![How PolyFundr works flow diagram](/images/diagram-how-it-works.png)
+```mermaid
+flowchart TD
+    A["Buy challenge"] --> B["Pass challenge<br/>+30% equity, profit spread across days"]
+    B --> C["Funded account opens<br/>same account size"]
+    C --> D["Reach payout threshold<br/>2% realized eligible profit"]
+    D --> E["Request payout<br/>USDC on Polygon"]
+```
 
 ## The full flow
 
@@ -39,7 +45,7 @@ This is the most important distinction on the site:
 | :---------------------------- | :---------------------- | :------------------------------- |
 | What moves you forward        | Pass the challenge      | Request a payout                 |
 | What counts toward the target | **Equity**              | **Realized profit**              |
-| Target size                   | 30% of starting balance | 30% of starting balance          |
+| Target size                   | 30% of starting balance | 2% of starting balance to request a payout |
 | Open positions                | Count in equity         | Do not count until closed        |
 | Consistency                   | Your account's cap of winning days' profit | Same cap, on every payout, measured since funding |
 
