@@ -1,7 +1,7 @@
 ---
 title: "Requesting a Payout from Your PolyFundr Funded Account"
 sidebarTitle: "Payouts"
-description: "Request a payout from realized eligible profit. Payouts are sent in USDC on Polygon to the wallet address you enter with each request."
+description: "Request a payout once your realized eligible profit reaches 2% of your starting balance. Payouts are sent in USDC on Polygon to the wallet address you enter with each request."
 ---
 
 Use this page as the main source for funded payouts. It explains when you are eligible, how much you can request, and how the wallet payout flow works. The rules are designed to be fair: profit you genuinely earn is always yours, and the structure exists so payouts stay fast and reliable for every funded trader.
@@ -10,28 +10,27 @@ Use this page as the main source for funded payouts. It explains when you are el
 
 All of these are true:
 
-1. Your **realized eligible profit**, after prior paid payouts, has reached **30% of your starting balance**.
+1. Your **realized eligible profit**, after prior paid payouts, has reached **2% of your starting balance**.
 2. You have **no other payout request pending** for that funded account.
 3. Your **book is flat**: all positions are closed, so the amount is exact and final.
 4. Your profit is **consistent for this payout window**: no single trading day produced more than your account's consistency cap of the combined profit of the winning days since your last payout.
 5. You provide a valid **EVM wallet address** that can receive USDC on Polygon.
 
 <Note>
-  The 30% is an eligibility gate, not a floor your balance can never cross. It
+  The 2% is an eligibility gate, not a floor your balance can never cross. It
   decides *when you may request*. A payout can take your balance below starting
-  balance plus 30%, after which you simply become eligible again once new profit
+  balance plus 2%, after which you simply become eligible again once new profit
   rebuilds it. Consistency here is a gate too, never a breach: it only asks you
   to spread profit across more than one day, and it never closes your account.
 </Note>
 
 ## How much you can request
 
-Each payout is the **lowest** of these three:
+Each payout is the **lower** of these two:
 
 | Limit | What it is |
 | :-- | :-- |
-| **Cap ladder** | 1st payout up to \$1,000, 2nd up to \$2,000, 3rd and later up to \$5,000 (gross). The ladder grows with you. |
-| **Half of new profit** | Half of the eligible profit you have earned **since your last payout**. |
+| **Cap ladder** | **5% of your account on your first payout, then 10%, up to \$5,000 per payout** (gross). The cap scales with your account size, so it means the same thing on every tier. |
 | **Eligible net minus pending** | Your total eligible profit after prior paid and pending payouts. |
 
 A 7-day cooldown applies between payouts.
@@ -39,16 +38,22 @@ A 7-day cooldown applies between payouts.
 <Info>
   The profit you do not take in a given window is **not lost**. It stays in your
   account, keeps working, and remains withdrawable in later windows as you keep
-  trading. The "half of new profit" rule simply ties each payout to profit you
-  genuinely earned recently, which is what keeps the program solvent enough to
-  pay everyone quickly.
+  trading.
 </Info>
+
+<Note>
+  We used to cap each payout after your first at **half of the profit you had
+  earned since the last one**. That rule is gone. Your eligible profit is now
+  payable up to the ladder cap whether you earned it this week or three weeks
+  ago.
+</Note>
 
 ### What counts as eligible profit
 
-- **Gains count** when the position is closed, the entry price was between **0.10 and 0.90**, and it is not a direct same-market YES/NO hedge.
+- **Losses always count.**
+- **Gains count** when the position is closed and it is not a direct same-market YES/NO hedge.
 
-Normal directional trading is fully covered by this. The only things set aside are extreme near-certain or near-impossible bets and self-hedges, which are not the genuine market calls a funded program is built to reward. This protects the value of every honest trader's payouts.
+Entries outside **0.10 to 0.90** cannot be opened at all, on challenges and funded accounts alike, so they never reach your book to be counted or excluded. See [Challenge rules](/challenges/rules) for the band. Normal directional trading is fully covered.
 
 ## Profit split and currency
 
@@ -70,23 +75,25 @@ never reach one. Detail on [Challenge upgrades](/challenges/upgrades).
 ## Example
 
 On a \$50,000 funded account, you become eligible once your realized eligible
-profit reaches **\$15,000** (30% of your starting balance).
+profit reaches **\$1,000** (2% of your starting balance).
 
-**Your first payout has no "half of new profit" limit.** As soon as you hit the
-\$15,000 eligibility target you can request straight away, up to the week-1
-ladder cap:
+From there the ladder is the only per-request limit, with a 7-day cooldown
+between requests:
 
-- Request the 1st payout: up to **\$1,000** gross (**\$800** to you at 80%, or **\$900** at 90%).
+- 1st payout: 5% of \$50,000, so up to **\$2,500** gross (**\$2,000** to you at 80%, or **\$2,250** at 90%).
+- 2nd and later: 10% of \$50,000, so up to **\$5,000** gross (**\$4,000** to you at 80%, or **\$4,500** at 90%).
 
-After your first payout, each later payout is additionally capped at **half of
-the new eligible profit you earn after your previous payout** (and by the
-ladder), with a 7-day cooldown between requests:
+The same percentages on other account sizes:
 
-- Earn at least **\$4,000** more, then request the 2nd: up to **\$2,000** gross (**\$1,600** to you at 80%, or **\$1,800** at 90%).
-- Earn at least **\$10,000** more, then request the 3rd and later: up to **\$5,000** gross (**\$4,000** to you at 80%, or **\$4,500** at 90%).
+| Account size | 1st payout (5%) | 2nd and later (10%) |
+| :-- | :-- | :-- |
+| \$5,000 | \$250 | \$500 |
+| \$10,000 | \$500 | \$1,000 |
+| \$25,000 | \$1,250 | \$2,500 |
+| \$50,000 | \$2,500 | \$5,000 |
 
-Steady earning keeps you withdrawing every cycle. Profit above each cap stays in
-the account for future windows.
+Profit above each cap stays in the account and is withdrawable in later
+windows.
 
 <Info>
   Larger funded accounts give more trading room because the drawdown and risk
@@ -107,8 +114,7 @@ the account for future windows.
   </Step>
   <Step title="Go to the Payouts page">
     In the app, navigate to **Payouts** from the main menu. It shows your
-    eligible profit, fresh profit this window, the amount available now, and the
-    next cap.
+    eligible profit, the amount available now, and the next cap.
   </Step>
   <Step title="Enter your destination wallet address">
     Provide the wallet address you want the USDC sent to. This address is not
@@ -135,7 +141,7 @@ Funds are sent as USDC to the wallet address you provide at the time of the requ
 
 ## How eligibility works after a payout
 
-The 30% gate stays tied to your funded account's starting balance. After a payout is sent, prior paid payouts are deducted from the eligible-profit calculation, so you build new eligible profit back above the gate before the next request unlocks. Each new payout is then sized from the profit earned **since** the previous one.
+The 2% gate stays tied to your funded account's starting balance. After a payout is sent, prior paid payouts are deducted from the eligible-profit calculation, so you build new eligible profit back above the gate before the next request unlocks.
 
 Drawdown is always calculated net of any payouts already made, so **withdrawing your profit never moves you closer to a breach**. Your earned profit is protected, not penalized.
 

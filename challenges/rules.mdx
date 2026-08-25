@@ -1,7 +1,7 @@
 ---
 title: "Challenge Rules"
 sidebarTitle: "Rules"
-description: "Every rule that governs your challenge account: profit target, consistency, daily drawdown, total drawdown, max risk per trade, and inactivity."
+description: "Every rule that governs your challenge account: profit target, consistency, entry price band, daily drawdown, total drawdown, max risk per trade, and inactivity."
 ---
 
 Use this page as the source of truth for challenge rules. It covers how you pass, what fails the account, and which risk rules continue after you get funded.
@@ -15,7 +15,7 @@ Use this page as the source of truth for challenge rules. It covers how you pass
   </Card>
   <Card title="You fail when" icon="shield-alert">
     You breach daily drawdown, total drawdown, max risk per trade, or
-    inactivity.
+    inactivity. The entry price band blocks the trade instead of failing you.
   </Card>
 </CardGroup>
 
@@ -25,10 +25,11 @@ Use this page as the source of truth for challenge rules. It covers how you pass
 | :---------------------------- | :--------------------------------------------------- | :------------------------------------------- |
 | Main goal                     | Pass the challenge                                   | Become payout-eligible                       |
 | What counts toward the target | Equity                                               | Realized profit                              |
-| Target size                   | 30% of starting balance                              | 30% of starting balance                      |
+| Target size                   | 30% of starting balance                              | 2% of starting balance to request a payout   |
 | Open positions                | Count in equity                                      | Do not count until closed                    |
 | Consistency                   | Your account's cap of winning days' profit           | Same cap, per payout window, every payout    |
 | Core risk rules               | 10% daily, 20% total, 5% max risk, 14-day inactivity | Same risk rules                              |
+| Entry price band              | Opens only between 0.10 and 0.90                     | Same band                                    |
 | Payouts                       | Not available                                        | Your account's profit split, progressive caps |
 
 ## You pass when
@@ -109,6 +110,27 @@ Before every trade, the platform calculates your worst-case loss across all open
 
 If 14 or more days pass without a qualifying trade (\$1+ notional), the account fails. The clock starts at challenge activation and resets with every qualifying trade you place.
 
+## Entry price band
+
+You can open a position at any price from **0.10 to 0.90**. An entry outside
+that band is refused at the moment you place it.
+
+Like max risk per trade, this **blocks the order, it does not fail the account**.
+Nothing happens to your challenge; the trade simply does not go through.
+
+**Closing is never restricted.** If a position you hold runs to 0.97, you can
+still take it off at 0.97 and keep the profit. The band applies to opening a
+position, not to leaving one.
+
+The same band applies to funded accounts.
+
+<Info>
+  This keeps the evaluation about forecasting rather than about farming
+  near-certain outcomes, where almost no skill is being shown. Our band is
+  **wider than the 0.20 to 0.80 band our competitors use**, so it rules out less
+  of the market than theirs does.
+</Info>
+
 ## What carries over to funded accounts
 
 After you pass, your funded account keeps these risk rules:
@@ -117,6 +139,7 @@ After you pass, your funded account keeps these risk rules:
 - 20% max total drawdown
 - 5% max risk per trade
 - 14-day max inactivity
+- The 0.10 to 0.90 entry price band
 
 Funded payout eligibility is explained on [Funded payouts](/funded/payouts).
 
@@ -130,7 +153,7 @@ Your **profit split** also carries over from the challenge: 80% as standard, or
 
 ## What is allowed
 
-- Trade any market available on PolyFundr using live Polymarket prices.
+- Trade any market available on PolyFundr using live Polymarket prices, opening between 0.10 and 0.90 and closing at any price.
 - Hold positions for as long as you like, provided you stay within the rules.
 - Trade on news events, weekends, or any time of day.
 - No restrictions on holding periods or market categories.

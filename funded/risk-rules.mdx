@@ -11,7 +11,7 @@ The risk rules that applied during your challenge carry over to your funded acco
 <CardGroup cols={2}>
   <Card title="Payout rules" icon="banknote">
     30% realized-profit threshold, your account's profit split, USDC on
-    Polygon, and progressive payout caps from \$1,000 to \$5,000 gross per
+    Polygon, and progressive payout caps of 5% then 10% of your account per
     request.
   </Card>
   <Card title="Risk limits" icon="shield-check">
@@ -33,16 +33,16 @@ The risk rules that applied during your challenge carry over to your funded acco
 
 ### Payout threshold
 
-Your payout threshold is 30% of your funded account's starting balance. It is based on **realized profit only**. Open positions do not count until they are closed, and prior paid payouts are deducted from the realized-profit calculation.
+Your payout threshold is 2% of your funded account's starting balance. It is based on **realized profit only**. Open positions do not count until they are closed, and prior paid payouts are deducted from the realized-profit calculation.
 
-| Account size | Profit target |
+| Account size | Minimum profit to request |
 |---|---|
-| \$5,000 | \$1,500 |
-| \$10,000 | \$3,000 |
-| \$25,000 | \$7,500 |
-| \$50,000 | \$15,000 |
-| \$100,000 | \$30,000 |
-| \$200,000 | \$60,000 |
+| \$5,000 | \$100 |
+| \$10,000 | \$200 |
+| \$25,000 | \$500 |
+| \$50,000 | \$1,000 |
+| \$100,000 | \$2,000 |
+| \$200,000 | \$4,000 |
 
 <Note>
   **Every** funded payout window also has to pass a consistency rule: no single
@@ -54,10 +54,9 @@ Your payout threshold is 30% of your funded account's starting balance. It is ba
 
 ### Per-request payout caps
 
-Each payout is the lowest of three limits:
+Each payout is the lower of two limits:
 
-- The cap ladder: 1st request up to \$1,000, 2nd up to \$2,000, 3rd and later up to \$5,000 gross.
-- Half of the eligible profit you have earned since your last payout.
+- The cap ladder: **5% of your account on your first payout, then 10%, up to \$5,000 per payout** (gross).
 - Your eligible net after prior paid and pending payouts.
 
 A 7-day cooldown applies between payouts. Profit above a cap is not lost: it
