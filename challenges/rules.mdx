@@ -27,7 +27,7 @@ Use this page as the source of truth for challenge rules. It covers how you pass
 | What counts toward the target | Equity                                               | Realized profit                              |
 | Target size                   | 30% of starting balance                              | 2% of starting balance to request a payout   |
 | Open positions                | Count in equity                                      | Do not count until closed                    |
-| Consistency                   | Your account's cap of winning days' profit           | Same cap, per payout window, every payout    |
+| Consistency                   | Your account's cap of winning days' profit           | Same cap, on every payout, measured since funding |
 | Core risk rules               | 10% daily, 20% total, 5% max risk, 14-day inactivity | Same risk rules                              |
 | Entry price band              | Opens only between 0.10 and 0.90                     | Same band                                    |
 | Payouts                       | Not available                                        | Your account's profit split, progressive caps |
@@ -143,10 +143,11 @@ After you pass, your funded account keeps these risk rules:
 
 Funded payout eligibility is explained on [Funded payouts](/funded/payouts).
 
-A consistency rule also applies to **every funded payout window**, using the
-same cap your challenge ran under. It is the same "no single lucky day" idea,
-measured over the profit earned since your last payout. A trader who earns
-steadily across a few days clears it without having to think about it.
+A consistency rule also applies to **every funded payout**, using the same cap
+your challenge ran under. It is the same "no single lucky day" idea, measured
+over all the profit you have earned since you were funded. A trader who earns
+steadily across a few days clears it without having to think about it, and
+keeps clearing it as their record grows.
 
 Your **profit split** also carries over from the challenge: 80% as standard, or
 90% if you bought the upgrade. See [Challenge upgrades](/challenges/upgrades).
