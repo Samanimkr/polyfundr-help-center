@@ -47,9 +47,8 @@ Your payout threshold is 2% of your funded account's starting balance. It is bas
 <Note>
   **Every** funded payout also has to pass a consistency rule: no single trading
   day's profit can be more than your account's cap of the combined profit of your
-  winning days since you were funded. It is a gate, not a breach, and never
-  closes your account. Trading steadily across a few days clears it, and it keeps
-  clearing as your record grows. See
+  winning days since your last payout. It is a gate, not a breach, and never
+  closes your account. Trading steadily across a few days clears it. See
   [Funded payouts](/funded/payouts).
 </Note>
 
@@ -58,10 +57,11 @@ Your payout threshold is 2% of your funded account's starting balance. It is bas
 Each payout is the lower of two limits:
 
 - The cap ladder: **5% of your account on your first payout, then 10%, up to \$5,000 per payout** (gross).
-- Your eligible net after prior paid and pending payouts.
+- Your **withdrawable profit**: eligible profit earned since your last payout, less anything pending.
 
-A 7-day cooldown applies between payouts. Profit above a cap is not lost: it
-stays in the account and remains withdrawable in later windows. Full detail and
+A 7-day cooldown applies between payouts. An approved payout resets your
+withdrawable profit to \$0, so the next request is built from the trading you do
+after it. Full detail and
 worked examples are on [Funded payouts](/funded/payouts).
 
 Larger funded accounts still provide more trading room because drawdown and risk

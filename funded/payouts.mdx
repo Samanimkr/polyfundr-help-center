@@ -13,7 +13,7 @@ All of these are true:
 1. Your **realized eligible profit**, after prior paid payouts, has reached **2% of your starting balance**.
 2. You have **no other payout request pending** for that funded account.
 3. Your **book is flat**: all positions are closed, so the amount is exact and final.
-4. Your profit is **consistent**: no single trading day produced more than your account's consistency cap of the combined profit of all your winning days since you were funded.
+4. Your profit is **consistent for this cycle**: no single trading day produced more than your account's consistency cap of the combined profit of your winning days since your last payout.
 5. You provide a valid **EVM wallet address** that can receive USDC on Polygon.
 
 <Note>
@@ -31,22 +31,23 @@ Each payout is the **lower** of these two:
 | Limit | What it is |
 | :-- | :-- |
 | **Cap ladder** | **5% of your account on your first payout, then 10%, up to \$5,000 per payout** (gross). The cap scales with your account size, and the \$5,000 ceiling applies on top. |
-| **Eligible net minus pending** | Your total eligible profit after prior paid and pending payouts. |
+| **Withdrawable profit** | Eligible profit you have earned **since your last payout**, less anything pending. |
 
 A 7-day cooldown applies between payouts.
 
-<Info>
-  The profit you do not take in a given window is **not lost**. It stays in your
-  account, keeps working, and remains withdrawable in later windows as you keep
-  trading.
-</Info>
+<Warning>
+  **An approved payout starts a new cycle and resets your withdrawable profit to
+  \$0.** Only profit you earn after it counts toward your next request. Profit
+  above a cap is not taken from you: it stays in your account as equity and keeps
+  giving you room to trade. It is no longer withdrawable in a later cycle, so if
+  you are near a cap it is worth knowing before you request.
+</Warning>
 
-<Note>
-  We used to cap each payout after your first at **half of the profit you had
-  earned since the last one**. That rule is gone. Your eligible profit is now
-  payable up to the ladder cap whether you earned it this week or three weeks
-  ago.
-</Note>
+<Info>
+  We used to cap each payout after your first at **half** of the profit earned
+  since the last one. That halving is gone. You can now withdraw the full amount
+  you earn in a cycle, up to your ladder cap.
+</Info>
 
 ### What counts as eligible profit
 
@@ -77,8 +78,8 @@ never reach one. Detail on [Challenge upgrades](/challenges/upgrades).
 On a \$50,000 funded account, you become eligible once your realized eligible
 profit reaches **\$1,000** (2% of your starting balance).
 
-From there each request is still the lower of the two limits above, the ladder
-and your eligible net, with a 7-day cooldown between requests. The ladder caps
+From there each request is the lower of the two limits above, the ladder and
+your withdrawable profit, with a 7-day cooldown between requests. The ladder caps
 on a \$50,000 account are:
 
 - 1st payout: 5% of \$50,000, so up to **\$2,500** gross (**\$2,000** to you at 80%, or **\$2,250** at 90%).
@@ -93,8 +94,9 @@ The same percentages on other account sizes:
 | \$25,000 | \$1,250 | \$2,500 |
 | \$50,000 | \$2,500 | \$5,000 |
 
-Profit above each cap stays in the account and is withdrawable in later
-windows.
+Each approved payout resets your withdrawable profit to \$0, so the next request
+is built from the trading you do after it. You need \$1,000 of new eligible
+profit to clear the gate again.
 
 <Info>
   Larger funded accounts give more trading room because the drawdown and risk
