@@ -31,3 +31,14 @@
 
 {/* Define what should and shouldn't be documented */}
 {/* Example: Don't document internal admin features */}
+
+## PolyFundr Mission Control
+
+- Company strategy, product, marketing, user, competitor, partnership, fundraising, metric, and risk context lives in the private repository `Samanimkr/polyfundr-mission-control` on branch `master`.
+- In remote chats, use the GitHub MCP connector as the live source of truth. Fetch and follow `AI-INSTRUCTIONS.md` from that repository before using Mission Control context.
+- When working locally, the vault is normally available at `~/mission-control`; read its current files directly instead of relying on remembered chat context.
+- Read only the dashboard, relevant indexes, and notes needed for the documentation task. Do not scan the whole vault.
+- Mission Control is internal context, not automatically approved public copy. Never publish confidential, personal, investor-only, user-identifying, speculative, or unverified information from it.
+- Check claims against the product implementation and approved public policy before publishing. Flag conflicts instead of silently choosing one source.
+- Do not update Mission Control unless the user asks. When asked, make a focused Markdown change, verify the commit or local edit, and report the changed paths.
+- Never access, recreate, or commit anything from `PRIVATE_DO_NOT_SYNC/`.
